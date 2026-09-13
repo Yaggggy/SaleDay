@@ -90,6 +90,10 @@ frontend/
     hooks/                 # auth context, role helpers
 docker-compose.yml
 ```
+## Screenshots
+<img width="1902" height="755" alt="Screenshot 2026-09-13 124025" src="https://github.com/user-attachments/assets/2b483603-bf30-452d-aa76-795dc3257f05" />
+<img width="1917" height="928" alt="Screenshot 2026-09-13 123920" src="https://github.com/user-attachments/assets/d32fa448-e70e-4615-9040-d88db2dc226f" />
+<img width="1912" height="926" alt="Screenshot 2026-09-13 122158" src="https://github.com/user-attachments/assets/41dfe315-4884-4cce-acd5-909abbd29179" />
 
 ---
 
