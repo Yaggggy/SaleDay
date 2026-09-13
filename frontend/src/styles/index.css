@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30,46,42,0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink tracking-tight;
+  }
+  ::selection {
+    background: #F4B93F;
+    color: #1E2E2A;
+  }
+  :focus-visible {
+    outline: 2px solid #3E7CB1;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* The signature element: a physical price-tag shape used for status badges & price chips. */
+  .price-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.85rem 0.3rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    border-radius: 0 0.5rem 0.5rem 0;
+    clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+  }
+  .price-tag::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.75);
+  }
+
+  .card {
+    @apply bg-paper-soft rounded-card border border-paper-line shadow-card;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-tag font-display font-semibold text-sm px-4 py-2.5 transition-all duration-150 active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-tag text-white shadow-tag hover:bg-tag-dark;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-ink border border-paper-line hover:border-ink/30;
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:bg-ink/5;
+  }
+  .btn-success {
+    @apply btn bg-garden text-white hover:bg-garden-dark;
+  }
+
+  .input {
+    @apply w-full rounded-tag border border-paper-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:border-sky focus:ring-2 focus:ring-sky/20 transition-colors;
+  }
+
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wide text-ink-faint;
+  }
+
+  .status-available { @apply bg-garden-light text-garden-dark; }
+  .status-sold { @apply bg-ink/10 text-ink-soft; }
+  .status-reserved { @apply bg-marigold-light text-marigold-dark; }
+  .status-removed { @apply bg-tag-light text-tag-dark; }
+  .status-unsold { @apply bg-sky-light text-sky; }
+  .status-draft { @apply bg-paper-line text-ink-faint; }
+}
+
+@media print {
+  body { background: white !important; }
+  .no-print { display: none !important; }
+}
