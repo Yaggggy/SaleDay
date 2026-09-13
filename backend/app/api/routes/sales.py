@@ -13,7 +13,7 @@ from app.models.organization import OrganizationMember
 from app.models.sale import Sale
 from app.models.transaction import Transaction
 from app.models.user import User
-from app.schemas.sale import SaleCreate, SaleOut, SaleStatusUpdate, SaleSummaryOut, SaleUpdate 
+from app.schemas.sale import SaleCreate, SaleOut, SaleStatusUpdate, SaleSummaryOut, SaleUpdate
 from app.services.activity_service import log_activity
 
 router = APIRouter(tags=["sales"])
